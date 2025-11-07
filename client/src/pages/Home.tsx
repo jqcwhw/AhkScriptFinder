@@ -148,9 +148,9 @@ WinGetClass, Class, ahk_id %WinID%
 WinGetTitle, Title, ahk_id %WinID%
 WinGet, Process, ProcessName, ahk_id %WinID%
 
-Info := "Window Information:" . "`n"
-Info .= "Title: " . Title . "`n"
-Info .= "Class: " . Class . "`n"
+Info := "Window Information:" . "\`n"
+Info .= "Title: " . Title . "\`n"
+Info .= "Class: " . Class . "\`n"
 Info .= "Process: " . Process
 
 MsgBox, %Info%
@@ -185,7 +185,7 @@ ClipChanged(DataType) {
         MsgBox("Clipboard history is empty")
         return
     }
-    
+
     menu := Menu()
     for index, item in clipHistory {
         preview := StrLen(item) > 50 ? SubStr(item, 1, 50) "..." : item
@@ -279,7 +279,7 @@ AntiAFK() {
     if WinExist("ahk_exe RobloxPlayerBeta.exe") {
         WinActivate
         Sleep(100)
-        
+
         ; Send random movement keys
         if (randomMovement) {
             movements := ["w", "a", "s", "d", "Space"]
@@ -291,7 +291,7 @@ AntiAFK() {
             ; Just jump
             Send("{Space}")
         }
-        
+
         ToolTip("Anti-AFK: Active")
         SetTimer(() => ToolTip(), -2000)
     }
@@ -301,7 +301,7 @@ AntiAFK() {
 F10:: {
     static isActive := true
     isActive := !isActive
-    
+
     if (isActive) {
         SetTimer(AntiAFK, afkInterval)
         ToolTip("Anti-AFK: Enabled")
@@ -332,7 +332,7 @@ isActive := false
 F1:: {
     global isActive
     isActive := !isActive
-    
+
     if (isActive) {
         if WinExist("ahk_exe RobloxPlayerBeta.exe") {
             WinActivate
@@ -390,7 +390,7 @@ isRunning := false
 F1:: {
     global isRunning
     isRunning := !isRunning
-    
+
     if (isRunning) {
         if WinExist("ahk_exe RobloxPlayerBeta.exe") {
             WinActivate
@@ -433,7 +433,7 @@ isRunning := false
 F1:: {
     global isRunning
     isRunning := !isRunning
-    
+
     if (isRunning) {
         if WinExist("ahk_exe RobloxPlayerBeta.exe") {
             WinActivate
@@ -451,26 +451,26 @@ F1:: {
 
 AutoFarm() {
     global isRunning, walkTime
-    
+
     while (isRunning && WinActive("ahk_exe RobloxPlayerBeta.exe")) {
         ; Walk forward
         Send("{w down}")
         Sleep(walkTime)
         Send("{w up}")
         Sleep(500)
-        
+
         ; Turn right and walk
         Send("{d down}")
         Sleep(1000)
         Send("{d up}")
         Sleep(500)
-        
+
         ; Walk forward
         Send("{w down}")
         Sleep(walkTime)
         Send("{w up}")
         Sleep(500)
-        
+
         ; Turn left and walk
         Send("{a down}")
         Sleep(1000)
@@ -955,11 +955,11 @@ F1::MsgBox('Hello World!')"
                         });
                         return;
                       }
-                      
+
                       const isV2 = aiPrompt.includes('#Requires AutoHotkey v2') || aiPrompt.includes('AutoHotkey v2');
                       const hasHotkeys = /^[#^!+]*[a-zA-Z0-9]+::/m.test(aiPrompt);
                       const hasFunctions = /\w+\([^)]*\)\s*{/.test(aiPrompt);
-                      
+
                       let warnings = [];
                       if (!isV2 && !aiPrompt.includes('#NoEnv')) {
                         warnings.push('Consider adding #NoEnv for AHK v1 scripts');
@@ -967,7 +967,7 @@ F1::MsgBox('Hello World!')"
                       if (!hasHotkeys && !hasFunctions) {
                         warnings.push('No hotkeys or functions detected - script may not do anything');
                       }
-                      
+
                       toast({
                         title: "Script Analysis",
                         description: isV2 
@@ -978,7 +978,7 @@ F1::MsgBox('Hello World!')"
                   >
                     Validate Script
                   </Button>
-                  
+
                   <Button 
                     variant="outline"
                     onClick={() => {
