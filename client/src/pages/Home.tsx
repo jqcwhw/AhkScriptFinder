@@ -64,26 +64,196 @@ const mockCuratedScripts: Script[] = [
   },
   {
     id: 'c3',
-    name: 'Gaming Macro Suite',
-    description: 'Collection of gaming macros for popular games. Includes auto-clicker and key rebinding.',
-    tags: ['gaming', 'macros', 'automation'],
+    name: 'Auto Clicker',
+    description: 'Simple auto-clicker with F1 toggle. Adjustable click speed. Perfect for repetitive clicking tasks.',
+    tags: ['automation', 'productivity', 'clicker'],
     downloadCount: 7215,
-    content: `; Gaming Macro Suite - AHK v1
+    content: `; Auto Clicker - AHK v1
 #Persistent
 #NoEnv
+SetBatchLines, -1
 
-; F1 - Auto Clicker Toggle
+; F1 - Toggle Auto Clicker
 F1::
 toggle := !toggle
 if (toggle) {
-    SetTimer, AutoClick, 100
+    ToolTip, Auto Clicker: ON
+    SetTimer, AutoClick, 50
 } else {
+    ToolTip, Auto Clicker: OFF
     SetTimer, AutoClick, Off
 }
+SetTimer, RemoveToolTip, 2000
 return
 
 AutoClick:
 Click
+return
+
+RemoveToolTip:
+SetTimer, RemoveToolTip, Off
+ToolTip
+return
+
+; F2 - Exit script
+F2::ExitApp`,
+    version: 'v1'
+  },
+  {
+    id: 'c4',
+    name: 'Scroll Anywhere',
+    description: 'Scroll by holding middle mouse button and moving mouse. Works in any application.',
+    tags: ['productivity', 'mouse', 'scrolling'],
+    downloadCount: 4120,
+    content: `; Scroll Anywhere - AHK v1
+#NoEnv
+#SingleInstance Force
+SetBatchLines, -1
+
+MButton::
+MouseGetPos, StartX, StartY
+SetTimer, ScrollMonitor, 10
+KeyWait, MButton
+SetTimer, ScrollMonitor, Off
+return
+
+ScrollMonitor:
+MouseGetPos, CurrentX, CurrentY
+DeltaX := CurrentX - StartX
+DeltaY := CurrentY - StartY
+
+if (Abs(DeltaY) > 5) {
+    if (DeltaY > 0)
+        Send {WheelDown}
+    else
+        Send {WheelUp}
+}
+return`,
+    version: 'v1'
+  },
+  {
+    id: 'c5',
+    name: 'Window Info Tool',
+    description: 'Display information about windows under cursor. Press F12 to show window class, title, and process.',
+    tags: ['utility', 'development', 'windows'],
+    downloadCount: 2890,
+    content: `; Window Info Tool - AHK v1
+#NoEnv
+#Persistent
+SetBatchLines, -1
+
+F12::
+MouseGetPos,,, WinID
+WinGetClass, Class, ahk_id %WinID%
+WinGetTitle, Title, ahk_id %WinID%
+WinGet, Process, ProcessName, ahk_id %WinID%
+
+Info := "Window Information:`n"
+Info .= "Title: " Title "`n"
+Info .= "Class: " Class "`n"
+Info .= "Process: " Process
+
+MsgBox, %Info%
+return`,
+    version: 'v1'
+  },
+  {
+    id: 'c6',
+    name: 'Clipboard Manager',
+    description: 'Enhanced clipboard with history. Ctrl+Shift+V to access clipboard history menu.',
+    tags: ['productivity', 'clipboard', 'utility'],
+    downloadCount: 6340,
+    content: `; Clipboard Manager - AHK v2
+#Requires AutoHotkey v2.0
+#SingleInstance Force
+
+clipHistory := []
+maxHistory := 10
+
+OnClipboardChange ClipChanged
+
+ClipChanged(DataType) {
+    if (DataType = 1 && A_Clipboard != "") {
+        clipHistory.InsertAt(1, A_Clipboard)
+        if (clipHistory.Length > maxHistory)
+            clipHistory.Pop()
+    }
+}
+
+^+v:: {
+    if (clipHistory.Length = 0) {
+        MsgBox("Clipboard history is empty")
+        return
+    }
+    
+    menu := Menu()
+    for index, item in clipHistory {
+        preview := StrLen(item) > 50 ? SubStr(item, 1, 50) "..." : item
+        menu.Add(preview, MenuHandler)
+    }
+    menu.Show()
+}
+
+MenuHandler(ItemName, ItemPos, MyMenu) {
+    A_Clipboard := clipHistory[ItemPos]
+    Send("^v")
+}`,
+    version: 'v2'
+  },
+  {
+    id: 'c7',
+    name: 'Media Hotkeys',
+    description: 'Global media controls. Use F7-F9 for play/pause, previous, and next track.',
+    tags: ['media', 'hotkeys', 'productivity'],
+    downloadCount: 3560,
+    content: `; Media Hotkeys - AHK v1
+#NoEnv
+#SingleInstance Force
+
+; F7 - Play/Pause
+F7::Send {Media_Play_Pause}
+
+; F8 - Previous Track
+F8::Send {Media_Prev}
+
+; F9 - Next Track
+F9::Send {Media_Next}
+
+; Ctrl+F7 - Volume Down
+^F7::Send {Volume_Down}
+
+; Ctrl+F8 - Mute
+^F8::Send {Volume_Mute}
+
+; Ctrl+F9 - Volume Up
+^F9::Send {Volume_Up}`,
+    version: 'v1'
+  },
+  {
+    id: 'c8',
+    name: 'Always On Top',
+    description: 'Toggle any window to always stay on top. Press Ctrl+Space on active window.',
+    tags: ['windows', 'productivity', 'utility'],
+    downloadCount: 4780,
+    content: `; Always On Top - AHK v1
+#NoEnv
+#SingleInstance Force
+
+^Space::
+WinGet, ExStyle, ExStyle, A
+if (ExStyle & 0x8) {
+    WinSet, AlwaysOnTop, Off, A
+    ToolTip, Always On Top: OFF
+} else {
+    WinSet, AlwaysOnTop, On, A
+    ToolTip, Always On Top: ON
+}
+SetTimer, RemoveToolTip, 1500
+return
+
+RemoveToolTip:
+SetTimer, RemoveToolTip, Off
+ToolTip
 return`,
     version: 'v1'
   }
