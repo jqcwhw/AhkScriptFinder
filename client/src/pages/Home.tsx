@@ -798,39 +798,39 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
         <div className="mb-8 grid md:grid-cols-2 gap-4">
           <Link href="/ps99-tools" data-testid="link-ps99-tools-card">
-            <Card className="p-4 bg-gradient-to-br from-violet-100 to-purple-200 dark:from-violet-900/30 dark:to-purple-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-ps99-tools">
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <Trophy className="w-5 h-5 text-violet-700 dark:text-violet-300" />
-                  <h2 className="text-xl font-bold text-violet-900 dark:text-violet-100">PS99 Tools</h2>
+            <Card className="p-2 bg-gradient-to-br from-violet-100 to-purple-200 dark:from-violet-900/30 dark:to-purple-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-ps99-tools">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-1.5">
+                  <Trophy className="w-4 h-4 text-violet-700 dark:text-violet-300" />
+                  <h2 className="text-base font-bold text-violet-900 dark:text-violet-100">PS99 Tools</h2>
                 </div>
-                <Gamepad2 className="w-6 h-6 text-purple-400 dark:text-purple-500 opacity-60" />
+                <Gamepad2 className="w-5 h-5 text-purple-400 dark:text-purple-500 opacity-60" />
               </div>
-              <p className="text-violet-800 dark:text-violet-200 text-sm mb-2">
+              <p className="text-violet-800 dark:text-violet-200 text-xs mb-1">
                 Real-time Pet Simulator 99 clan tracker, RAP checker, and battle monitor using Big Games API
               </p>
-              <div className="flex items-center gap-2 text-sm font-medium text-violet-700 dark:text-violet-300">
+              <div className="flex items-center gap-1.5 text-xs font-medium text-violet-700 dark:text-violet-300">
                 <span>Explore Live Data</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
           </Link>
 
           <Link href="/python-transcriber" data-testid="link-python-transcriber-card">
-            <Card className="p-4 bg-gradient-to-br from-fuchsia-100 to-pink-200 dark:from-fuchsia-900/30 dark:to-pink-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-python-transcriber">
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <Code2 className="w-5 h-5 text-fuchsia-700 dark:text-fuchsia-300" />
-                  <h2 className="text-xl font-bold text-fuchsia-900 dark:text-fuchsia-100">Python Transcriber</h2>
+            <Card className="p-2 bg-gradient-to-br from-fuchsia-100 to-pink-200 dark:from-fuchsia-900/30 dark:to-pink-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-python-transcriber">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-1.5">
+                  <Code2 className="w-4 h-4 text-fuchsia-700 dark:text-fuchsia-300" />
+                  <h2 className="text-base font-bold text-fuchsia-900 dark:text-fuchsia-100">Python Transcriber</h2>
                 </div>
-                <Sparkles className="w-6 h-6 text-pink-400 dark:text-pink-500 opacity-60" />
+                <Sparkles className="w-5 h-5 text-pink-400 dark:text-pink-500 opacity-60" />
               </div>
-              <p className="text-fuchsia-800 dark:text-fuchsia-200 text-sm mb-2">
+              <p className="text-fuchsia-800 dark:text-fuchsia-200 text-xs mb-1">
                 AI-powered Python to AutoHotkey converter with validation, debugging, and instant downloads
               </p>
-              <div className="flex items-center gap-2 text-sm font-medium text-fuchsia-700 dark:text-fuchsia-300">
+              <div className="flex items-center gap-1.5 text-xs font-medium text-fuchsia-700 dark:text-fuchsia-300">
                 <span>Convert Code Now</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
           </Link>
@@ -843,8 +843,9 @@ export default function Home() {
           />
         </div>
 
-        <Tabs defaultValue="search" className="space-y-6">
-          <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2">
+        <div className="bg-green-50/50 dark:bg-green-950/20 p-6 rounded-lg border border-green-100 dark:border-green-900/30">
+          <Tabs defaultValue="search" className="space-y-6">
+            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2">
             <TabsTrigger value="search" data-testid="tab-search">
               GitHub Search
             </TabsTrigger>
@@ -1194,6 +1195,7 @@ F1::MsgBox('Hello World!')"
             )}
           </TabsContent>
         </Tabs>
+      </div>
       </main>
 
       <AddScriptDialog

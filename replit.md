@@ -4,6 +4,11 @@
 
 AHK Script Finder is a web application that helps users discover, manage, and generate AutoHotkey (AHK) scripts. The platform enables users to search GitHub for AHK scripts (both v1 and v2), browse curated collections, maintain a personal script library, and generate custom scripts using AI assistance. Built as a full-stack TypeScript application with a React frontend and Express backend, it provides a modern, developer-friendly interface for the AutoHotkey community.
 
+**Recent Changes (Nov 8, 2025):**
+- Reduced size of PS99 Tools and Python Transcriber navigation cards (halved padding and text sizes)
+- Added light green background container to AHK Script Finder section for visual cohesion
+- All tabs and search functionality now visually grouped as one unified section
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
