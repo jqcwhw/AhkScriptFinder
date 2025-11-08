@@ -797,47 +797,39 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
         <div className="mb-8 grid md:grid-cols-2 gap-4">
           <Link href="/ps99-tools" data-testid="link-ps99-tools-card">
-            <Card className="p-6 bg-gradient-to-br from-violet-500 to-purple-600 text-white hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-ps99-tools">
-              <div className="flex items-center justify-between mb-3">
+            <Card className="p-4 bg-gradient-to-br from-violet-100 to-purple-200 dark:from-violet-900/30 dark:to-purple-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-ps99-tools">
+              <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <Trophy className="w-6 h-6" />
-                  <h2 className="text-2xl font-bold">PS99 Tools</h2>
+                  <Trophy className="w-5 h-5 text-violet-700 dark:text-violet-300" />
+                  <h2 className="text-xl font-bold text-violet-900 dark:text-violet-100">PS99 Tools</h2>
                 </div>
-                <Gamepad2 className="w-8 h-8 opacity-50" />
+                <Gamepad2 className="w-6 h-6 text-purple-400 dark:text-purple-500 opacity-60" />
               </div>
-              <p className="text-white/90 mb-4 text-sm">
+              <p className="text-violet-800 dark:text-violet-200 text-sm mb-2">
                 Real-time Pet Simulator 99 clan tracker, RAP checker, and battle monitor using Big Games API
               </p>
-              <div className="flex items-center gap-2 text-sm font-medium">
+              <div className="flex items-center gap-2 text-sm font-medium text-violet-700 dark:text-violet-300">
                 <span>Explore Live Data</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-              <div className="mt-3 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
-                <Zap className="w-3 h-3" />
-                Click me!
               </div>
             </Card>
           </Link>
 
           <Link href="/python-transcriber" data-testid="link-python-transcriber-card">
-            <Card className="p-6 bg-gradient-to-br from-fuchsia-500 to-pink-600 text-white hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-python-transcriber">
-              <div className="flex items-center justify-between mb-3">
+            <Card className="p-4 bg-gradient-to-br from-fuchsia-100 to-pink-200 dark:from-fuchsia-900/30 dark:to-pink-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-python-transcriber">
+              <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <Code2 className="w-6 h-6" />
-                  <h2 className="text-2xl font-bold">Python Transcriber</h2>
+                  <Code2 className="w-5 h-5 text-fuchsia-700 dark:text-fuchsia-300" />
+                  <h2 className="text-xl font-bold text-fuchsia-900 dark:text-fuchsia-100">Python Transcriber</h2>
                 </div>
-                <Sparkles className="w-8 h-8 opacity-50" />
+                <Sparkles className="w-6 h-6 text-pink-400 dark:text-pink-500 opacity-60" />
               </div>
-              <p className="text-white/90 mb-4 text-sm">
+              <p className="text-fuchsia-800 dark:text-fuchsia-200 text-sm mb-2">
                 AI-powered Python to AutoHotkey converter with validation, debugging, and instant downloads
               </p>
-              <div className="flex items-center gap-2 text-sm font-medium">
+              <div className="flex items-center gap-2 text-sm font-medium text-fuchsia-700 dark:text-fuchsia-300">
                 <span>Convert Code Now</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-              <div className="mt-3 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
-                <Zap className="w-3 h-3" />
-                Click me!
               </div>
             </Card>
           </Link>
