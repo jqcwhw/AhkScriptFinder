@@ -3,6 +3,13 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { githubSearchSchema, personalScriptSchema, type GitHubSearchResult } from "@shared/schema";
 import { z } from "zod";
+import OpenAI from "openai";
+
+// Using Replit AI Integrations for OpenAI - no API key needed, billed to Replit credits
+const openai = new OpenAI({
+  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY
+});
 
 async function searchGitHubForAHKScripts(query: string, page: number = 1, perPage: number = 30): Promise<{ results: GitHubSearchResult[], totalCount: number }> {
   const encodedQuery = encodeURIComponent(`${query} extension:ahk`);
@@ -149,42 +156,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ success: false, error: 'Prompt is required' });
       }
 
-      const openaiApiKey = process.env.OPENAI_API_KEY;
-      if (!openaiApiKey) {
-        return res.status(500).json({ success: false, error: 'OpenAI API key not configured' });
-      }
-
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${openaiApiKey}`,
-        },
-        body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are an expert AutoHotkey programmer. Generate clean, well-commented AutoHotkey v2 scripts based on user requests. Always include #Requires AutoHotkey v2.0 at the top. Provide only the script code, no explanations.',
-            },
-            {
-              role: 'user',
-              content: prompt,
-            },
-          ],
-          temperature: 0.7,
-        }),
+      const response = await openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are an expert AutoHotkey programmer. Generate clean, well-commented AutoHotkey v2 scripts based on user requests. Always include #Requires AutoHotkey v2.0 at the top. Provide only the script code, no explanations.',
+          },
+          {
+            role: 'user',
+            content: prompt,
+          },
+        ],
+        temperature: 0.7,
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('OpenAI API error:', errorData);
-        return res.status(500).json({ success: false, error: 'Failed to generate script' });
-      }
-
-      const data = await response.json();
-      const generatedCode = data.choices[0]?.message?.content || '';
-
+      const generatedCode = response.choices[0]?.message?.content || '';
       res.json({ success: true, code: generatedCode });
     } catch (error) {
       console.error('Error generating script:', error);
