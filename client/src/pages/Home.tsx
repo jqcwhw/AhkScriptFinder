@@ -785,7 +785,7 @@ export default function Home() {
   const curatedScripts = (curatedScriptsQuery.data?.scripts as Script[]) || mockCuratedScripts;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 dark:from-gray-950 dark:via-emerald-950/20 dark:to-gray-900">
+    <div className="min-h-screen bg-background">
       <header className="border-b bg-background/80 backdrop-blur-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
           <h1 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent" data-testid="text-app-title">
@@ -843,25 +843,29 @@ export default function Home() {
           />
         </div>
 
-        <div className="bg-green-50/50 dark:bg-green-950/20 p-6 rounded-lg border border-green-100 dark:border-green-900/30">
+        <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 dark:from-emerald-950/30 dark:via-green-950/20 dark:to-teal-950/30 p-6 rounded-lg border border-emerald-200 dark:border-emerald-800/30">
+          <div className="mb-4">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">AutoHotkey Script Tools</h2>
+            <p className="text-sm text-emerald-800 dark:text-emerald-200 mt-1">Search GitHub, browse curated scripts, manage your library, and generate custom AHK scripts</p>
+          </div>
           <Tabs defaultValue="search" className="space-y-6">
-            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2">
-            <TabsTrigger value="search" data-testid="tab-search">
+            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-emerald-100/50 dark:bg-emerald-900/20">
+            <TabsTrigger value="search" data-testid="tab-search" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
               GitHub Search
             </TabsTrigger>
-            <TabsTrigger value="curated" data-testid="tab-curated">
+            <TabsTrigger value="curated" data-testid="tab-curated" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
               Curated Library
             </TabsTrigger>
-            <TabsTrigger value="personal" data-testid="tab-personal">
+            <TabsTrigger value="personal" data-testid="tab-personal" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
               My Scripts
             </TabsTrigger>
-            <TabsTrigger value="ai" data-testid="tab-ai">
+            <TabsTrigger value="ai" data-testid="tab-ai" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white">
               AI Generator
             </TabsTrigger>
-            <TabsTrigger value="tester" data-testid="tab-tester">
+            <TabsTrigger value="tester" data-testid="tab-tester" className="data-[state=active]:bg-teal-600 data-[state=active]:text-white">
               Script Tester
             </TabsTrigger>
-            <TabsTrigger value="optimizer" data-testid="tab-optimizer">
+            <TabsTrigger value="optimizer" data-testid="tab-optimizer" className="data-[state=active]:bg-teal-600 data-[state=active]:text-white">
               System Optimizer
             </TabsTrigger>
           </TabsList>
