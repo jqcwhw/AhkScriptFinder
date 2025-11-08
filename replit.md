@@ -5,15 +5,19 @@
 AHK Script Finder is a web application that helps users discover, manage, and generate AutoHotkey (AHK) scripts. The platform enables users to search GitHub for AHK scripts (both v1 and v2), browse curated collections, maintain a personal script library, and generate custom scripts using AI assistance. Built as a full-stack TypeScript application with a React frontend and Express backend, it provides a modern, developer-friendly interface for the AutoHotkey community.
 
 **Recent Changes (Nov 8, 2025):**
-- **Professional Gaming Hub Redesign**: Transformed the entire application into a polished gaming hub aesthetic inspired by OMEN Gaming Hub and Razer Cortex while maintaining transparent code visibility
-- **Enhanced Script Cards**: Added gradient top borders, professional icons with hover effects, improved typography, better shadows, and cleaner layouts
-- **Professional Iconography**: Added meaningful icons to all tabs (Github, Library, FolderOpen, Wand2, FlaskConical, Settings2) for better visual navigation
-- **AI Generator Enhancement**: Purple/violet gradient theme with professional card layout, better visual hierarchy, and AI-powered badge
-- **Code Viewer Upgrade**: Dark code preview background (slate-950) with emerald syntax highlighting, professional header with gradient fill
-- **Search Result Cards**: Enhanced with "Code Preview" labels, star ratings, professional card styling with emerald accents
-- **Consistent Color System**: Emerald-100/teal-100 gradient fills, emerald-400/500 borders, professional shadows throughout
-- **Typography Improvements**: Added tracking-tight for headers, better font weights, improved spacing and readability
-- All changes maintain the core feature of showing visible code and descriptions for every script
+- **Major Professional Dark Theme Redesign**: Complete visual overhaul inspired by OMEN Gaming Hub and Razer Cortex
+  - Dark sophisticated backgrounds (slate-950/900 gradients) replacing light blue theme
+  - Professional glowing effects with blur opacity transitions on hover
+  - Premium card designs with emerald/teal neon accent glows and shadows
+  - High-contrast dark theme with emerald-400/teal-400 gradient text and borders
+- **Enhanced Header & Navigation**: Glowing header with backdrop blur, gradient text logo, and professional tab system with emerald gradient active states and shadow effects
+- **Premium Script Cards**: Dark card backgrounds with glowing border rings, emerald gradient top borders, professional icon badges with ring effects, visible code previews maintained with dark slate-950/50 backgrounds
+- **Professional Button Styling**: Gradient buttons (emerald-to-teal), shadow effects, and hover state improvements across all interactive elements
+- **Search Result Cards**: Matching dark professional theme with glowing hover effects, professional typography, and maintained code transparency
+- **PS99 & Python Transcriber Cards**: Sophisticated dark cards with violet/fuchsia glowing effects, ring borders, and professional spacing
+- **System Optimizer Section**: Dark theme with professional headers, emerald gradient accents, and organized tool categories
+- **Typography Overhaul**: Font-black weights, uppercase tracking for headers, improved readability with slate-100/300 text colors
+- **Maintained Core Feature**: All script cards still show visible code previews for complete transparency - now with professional dark code panels
 
 ## User Preferences
 

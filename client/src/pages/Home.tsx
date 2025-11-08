@@ -785,56 +785,69 @@ export default function Home() {
   const curatedScripts = (curatedScriptsQuery.data?.scripts as Script[]) || mockCuratedScripts;
 
   return (
-    <div className="min-h-screen bg-blue-50/30 dark:bg-slate-950">
-      <header className="border-b bg-background/95 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <header className="border-b border-emerald-500/20 bg-slate-900/80 backdrop-blur-xl sticky top-0 z-50 shadow-2xl shadow-emerald-500/10">
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
-          <div className="bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-950/50 dark:to-teal-950/50 border-2 border-emerald-500 dark:border-emerald-600 rounded-lg px-6 py-2 shadow-md">
-            <h1 className="text-2xl md:text-3xl font-bold text-emerald-700 dark:text-emerald-300 tracking-tight" data-testid="text-app-title">
-              AHK Script Finder
-            </h1>
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 border border-emerald-500/30 rounded-lg px-6 py-3 shadow-xl">
+              <h1 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent tracking-tight" data-testid="text-app-title">
+                AHK SCRIPT FINDER
+              </h1>
+            </div>
           </div>
           <ThemeToggle />
         </div>
       </header>
 
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
-        <div className="mb-8 grid md:grid-cols-2 gap-4">
+        <div className="mb-8 grid md:grid-cols-2 gap-6">
           <Link href="/ps99-tools" data-testid="link-ps99-tools-card">
-            <Card className="p-2 bg-gradient-to-br from-violet-100 to-purple-200 dark:from-violet-900/30 dark:to-purple-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-ps99-tools">
-              <div className="flex items-center justify-between mb-1">
-                <div className="flex items-center gap-1.5">
-                  <Trophy className="w-4 h-4 text-violet-700 dark:text-violet-300" />
-                  <h2 className="text-base font-bold text-violet-900 dark:text-violet-100">PS99 Tools</h2>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <Card className="relative p-5 bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-2 border-violet-500/30 hover:border-violet-400/50 transition-all duration-300 cursor-pointer shadow-2xl shadow-violet-500/20" data-testid="card-ps99-tools">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 bg-violet-500/20 rounded-lg ring-2 ring-violet-500/30">
+                      <Trophy className="w-5 h-5 text-violet-400" />
+                    </div>
+                    <h2 className="text-lg font-black text-violet-300 tracking-tight">PS99 TOOLS</h2>
+                  </div>
+                  <Gamepad2 className="w-6 h-6 text-violet-500/40" />
                 </div>
-                <Gamepad2 className="w-5 h-5 text-purple-400 dark:text-purple-500 opacity-60" />
-              </div>
-              <p className="text-violet-800 dark:text-violet-200 text-xs mb-1">
-                Real-time Pet Simulator 99 clan tracker, RAP checker, and battle monitor using Big Games API
-              </p>
-              <div className="flex items-center gap-1.5 text-xs font-medium text-violet-700 dark:text-violet-300">
-                <span>Explore Live Data</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Card>
+                <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                  Real-time Pet Simulator 99 clan tracker, RAP checker, and battle monitor using Big Games API
+                </p>
+                <div className="flex items-center gap-2 text-sm font-semibold text-violet-400 group-hover:text-violet-300 transition-colors">
+                  <span>EXPLORE LIVE DATA</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Card>
+            </div>
           </Link>
 
           <Link href="/python-transcriber" data-testid="link-python-transcriber-card">
-            <Card className="p-2 bg-gradient-to-br from-fuchsia-100 to-pink-200 dark:from-fuchsia-900/30 dark:to-pink-800/30 hover-elevate active-elevate-2 cursor-pointer group relative" data-testid="card-python-transcriber">
-              <div className="flex items-center justify-between mb-1">
-                <div className="flex items-center gap-1.5">
-                  <Code2 className="w-4 h-4 text-fuchsia-700 dark:text-fuchsia-300" />
-                  <h2 className="text-base font-bold text-fuchsia-900 dark:text-fuchsia-100">Python Transcriber</h2>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <Card className="relative p-5 bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-2 border-fuchsia-500/30 hover:border-fuchsia-400/50 transition-all duration-300 cursor-pointer shadow-2xl shadow-fuchsia-500/20" data-testid="card-python-transcriber">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 bg-fuchsia-500/20 rounded-lg ring-2 ring-fuchsia-500/30">
+                      <Code2 className="w-5 h-5 text-fuchsia-400" />
+                    </div>
+                    <h2 className="text-lg font-black text-fuchsia-300 tracking-tight">PYTHON TRANSCRIBER</h2>
+                  </div>
+                  <Sparkles className="w-6 h-6 text-fuchsia-500/40" />
                 </div>
-                <Sparkles className="w-5 h-5 text-pink-400 dark:text-pink-500 opacity-60" />
-              </div>
-              <p className="text-fuchsia-800 dark:text-fuchsia-200 text-xs mb-1">
-                AI-powered Python to AutoHotkey converter with validation, debugging, and instant downloads
-              </p>
-              <div className="flex items-center gap-1.5 text-xs font-medium text-fuchsia-700 dark:text-fuchsia-300">
-                <span>Convert Code Now</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Card>
+                <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                  AI-powered Python to AutoHotkey converter with validation, debugging, and instant downloads
+                </p>
+                <div className="flex items-center gap-2 text-sm font-semibold text-fuchsia-400 group-hover:text-fuchsia-300 transition-colors">
+                  <span>CONVERT CODE NOW</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                </div>
+              </Card>
+            </div>
           </Link>
         </div>
         <div className="mb-6">
@@ -845,66 +858,71 @@ export default function Home() {
           />
         </div>
 
-        <div className="bg-background border-2 border-emerald-500 dark:border-emerald-600 p-6 rounded-lg shadow-lg">
-          <div className="mb-5 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-950/50 dark:to-teal-950/50 border-2 border-emerald-500 dark:border-emerald-600 rounded-lg p-5 shadow-sm">
-            <h2 className="text-2xl font-bold text-emerald-800 dark:text-emerald-200 tracking-tight">AutoHotkey Script Tools</h2>
-            <p className="text-sm text-emerald-700 dark:text-emerald-300 mt-1.5">Search GitHub, browse curated scripts, manage your library, and generate custom AHK scripts</p>
-          </div>
-          <Tabs defaultValue="search" className="space-y-6">
-            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-emerald-100 dark:bg-emerald-950/40 border-2 border-emerald-400 dark:border-emerald-700 rounded-lg p-1.5 shadow-sm">
-            <TabsTrigger value="search" data-testid="tab-search" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white flex items-center gap-2">
-              <Github className="w-4 h-4" />
-              <span>GitHub Search</span>
-            </TabsTrigger>
-            <TabsTrigger value="curated" data-testid="tab-curated" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white flex items-center gap-2">
-              <Library className="w-4 h-4" />
-              <span>Curated Library</span>
-            </TabsTrigger>
-            <TabsTrigger value="personal" data-testid="tab-personal" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white flex items-center gap-2">
-              <FolderOpen className="w-4 h-4" />
-              <span>My Scripts</span>
-            </TabsTrigger>
-            <TabsTrigger value="ai" data-testid="tab-ai" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white flex items-center gap-2">
-              <Wand2 className="w-4 h-4" />
-              <span>AI Generator</span>
-            </TabsTrigger>
-            <TabsTrigger value="tester" data-testid="tab-tester" className="data-[state=active]:bg-teal-600 data-[state=active]:text-white flex items-center gap-2">
-              <FlaskConical className="w-4 h-4" />
-              <span>Script Tester</span>
-            </TabsTrigger>
-            <TabsTrigger value="optimizer" data-testid="tab-optimizer" className="data-[state=active]:bg-teal-600 data-[state=active]:text-white flex items-center gap-2">
-              <Settings2 className="w-4 h-4" />
-              <span>System Optimizer</span>
-            </TabsTrigger>
-          </TabsList>
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-2xl blur-xl"></div>
+          <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 border-2 border-emerald-500/30 p-8 rounded-2xl shadow-2xl shadow-emerald-500/10">
+            <div className="mb-6 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl blur"></div>
+              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 border border-emerald-500/40 rounded-xl p-6 shadow-xl">
+                <h2 className="text-3xl font-black bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent tracking-tight">AUTOHOTKEY SCRIPT TOOLS</h2>
+                <p className="text-slate-300 mt-2 text-sm leading-relaxed">Search GitHub, browse curated scripts, manage your library, and generate custom AHK scripts</p>
+              </div>
+            </div>
+            <Tabs defaultValue="search" className="space-y-6">
+              <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-slate-800/50 border border-emerald-500/20 rounded-xl p-2 shadow-lg backdrop-blur-sm">
+                <TabsTrigger value="search" data-testid="tab-search" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-emerald-500/30 flex items-center gap-2 transition-all duration-300">
+                  <Github className="w-4 h-4" />
+                  <span className="font-semibold">GitHub Search</span>
+                </TabsTrigger>
+                <TabsTrigger value="curated" data-testid="tab-curated" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-emerald-500/30 flex items-center gap-2 transition-all duration-300">
+                  <Library className="w-4 h-4" />
+                  <span className="font-semibold">Curated Library</span>
+                </TabsTrigger>
+                <TabsTrigger value="personal" data-testid="tab-personal" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-emerald-500/30 flex items-center gap-2 transition-all duration-300">
+                  <FolderOpen className="w-4 h-4" />
+                  <span className="font-semibold">My Scripts</span>
+                </TabsTrigger>
+                <TabsTrigger value="ai" data-testid="tab-ai" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-emerald-500/30 flex items-center gap-2 transition-all duration-300">
+                  <Wand2 className="w-4 h-4" />
+                  <span className="font-semibold">AI Generator</span>
+                </TabsTrigger>
+                <TabsTrigger value="tester" data-testid="tab-tester" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-teal-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-teal-500/30 flex items-center gap-2 transition-all duration-300">
+                  <FlaskConical className="w-4 h-4" />
+                  <span className="font-semibold">Script Tester</span>
+                </TabsTrigger>
+                <TabsTrigger value="optimizer" data-testid="tab-optimizer" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-teal-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-teal-500/30 flex items-center gap-2 transition-all duration-300">
+                  <Settings2 className="w-4 h-4" />
+                  <span className="font-semibold">System Optimizer</span>
+                </TabsTrigger>
+              </TabsList>
 
-          <TabsContent value="search" className="space-y-4 bg-background rounded-lg p-4">
+          <TabsContent value="search" className="space-y-4 bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
             {searchMutation.isPending ? (
               <div className="text-center py-12">
-                <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-emerald-600" />
-                <p className="text-muted-foreground">Searching GitHub for AutoHotkey scripts...</p>
+                <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-emerald-400" />
+                <p className="text-slate-400">Searching GitHub for AutoHotkey scripts...</p>
               </div>
             ) : !hasSearched ? (
               <div className="text-center py-12">
-                <p className="text-muted-foreground">
+                <p className="text-slate-300 text-lg">
                   Enter a search query to find AutoHotkey scripts on GitHub
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-sm text-slate-400 mt-3">
                   Try searching for: anti afk, window manager, clipboard, hotkeys, macros
                 </p>
               </div>
             ) : searchResults.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-muted-foreground">
+                <p className="text-slate-300 text-lg">
                   No AutoHotkey scripts found for "{searchQuery}"
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-sm text-slate-400 mt-3">
                   Try different keywords or check your spelling
                 </p>
               </div>
             ) : (
               <>
-                <p className="text-sm text-emerald-800 dark:text-emerald-200 font-medium">
+                <p className="text-sm text-emerald-400 font-semibold">
                   Found {searchResults.length} AutoHotkey scripts matching "{searchQuery}"
                   {searchMutation.data?.totalCount && searchMutation.data.totalCount > searchResults.length && (
                     <span> (showing first {searchResults.length} of {searchMutation.data.totalCount} total results)</span>
@@ -912,71 +930,68 @@ export default function Home() {
                 </p>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {searchResults.map((result: SearchResult) => (
-                    <div key={result.id} className="bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-950/50 dark:to-teal-950/50 border-2 border-emerald-400 dark:border-emerald-700 rounded-lg overflow-hidden shadow-sm">
-                      <SearchResultCard
-                        result={result}
-                        onDownload={handleDownload}
-                      />
-                    </div>
+                    <SearchResultCard
+                      key={result.id}
+                      result={result}
+                      onDownload={handleDownload}
+                    />
                   ))}
                 </div>
               </>
             )}
           </TabsContent>
 
-          <TabsContent value="curated" className="space-y-4 bg-background rounded-lg p-4">
+          <TabsContent value="curated" className="space-y-4 bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
             {curatedScriptsQuery.isLoading ? (
               <div className="flex items-center justify-center py-12">
-                <Loader2 className="w-8 h-8 animate-spin text-emerald-600" />
+                <Loader2 className="w-8 h-8 animate-spin text-emerald-400" />
               </div>
             ) : curatedScripts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {curatedScripts.map((script) => (
-                  <div key={script.id} className="bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-950/50 dark:to-teal-950/50 border-2 border-emerald-400 dark:border-emerald-700 rounded-lg overflow-hidden shadow-sm">
-                    <ScriptCard
-                      script={script}
-                      onDownload={handleDownload}
-                      onPreview={handlePreview}
-                    />
-                  </div>
+                  <ScriptCard
+                    key={script.id}
+                    script={script}
+                    onDownload={handleDownload}
+                    onPreview={handlePreview}
+                  />
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12 text-muted-foreground">
-                <p>No curated scripts available</p>
+              <div className="text-center py-12">
+                <p className="text-slate-300">No curated scripts available</p>
               </div>
             )}
           </TabsContent>
 
-          <TabsContent value="personal" className="space-y-4 bg-background rounded-lg p-4">
+          <TabsContent value="personal" className="space-y-4 bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
             <div className="flex justify-end mb-4">
-              <Button onClick={() => setAddDialogOpen(true)} data-testid="button-add-script" className="bg-emerald-600 hover:bg-emerald-700">
+              <Button onClick={() => setAddDialogOpen(true)} data-testid="button-add-script" className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg shadow-emerald-500/20">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Script
               </Button>
             </div>
             {personalScriptsQuery.isLoading ? (
               <div className="text-center py-12">
-                <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-emerald-600" />
-                <p className="text-muted-foreground">Loading your scripts...</p>
+                <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-emerald-400" />
+                <p className="text-slate-400">Loading your scripts...</p>
               </div>
             ) : personalScripts.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-muted-foreground mb-4">
+                <p className="text-slate-300 text-lg mb-4">
                   No personal scripts yet. Add your first script!
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {personalScripts.map((script: Script) => (
-                  <div key={script.id} className="bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-950/50 dark:to-teal-950/50 border-2 border-emerald-400 dark:border-emerald-700 rounded-lg overflow-hidden shadow-sm">
-                    <ScriptCard
-                      script={script}
-                      onDownload={handleDownload}
-                      onPreview={handlePreview}
-                      onDelete={handleDeleteScript}
-                    />
-                  </div>
+                  <ScriptCard
+                    key={script.id}
+                    script={script}
+                    onDownload={handleDownload}
+                    onPreview={handlePreview}
+                    onDelete={handleDeleteScript}
+                  />
                 ))}
               </div>
             )}
@@ -1223,8 +1238,9 @@ F1::MsgBox('Hello World!')"
               </div>
             )}
           </TabsContent>
-        </Tabs>
-      </div>
+            </Tabs>
+          </div>
+        </div>
       </main>
 
       <AddScriptDialog
