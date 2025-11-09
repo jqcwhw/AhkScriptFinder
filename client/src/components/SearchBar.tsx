@@ -30,7 +30,7 @@ export default function SearchBar({
   };
 
   return (
-    <div className="flex gap-3 w-full">
+    <div className="flex gap-3 w-full items-center">
       <div className="relative flex-1">
         <Search className={`absolute left-5 top-1/2 transform -translate-y-1/2 ${iconSize} text-muted-foreground pointer-events-none`} />
         <Input
@@ -45,7 +45,7 @@ export default function SearchBar({
       </div>
       <Button 
         onClick={onSearch}
-        className={`${buttonHeight} px-8 ${textSize} font-bold`}
+        className="h-16 px-8 text-lg font-bold"
         data-testid="button-search"
       >
         Search
